@@ -83,12 +83,12 @@ WSGI_APPLICATION = 'api_petfriendly.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydb',
-        'USER': 'postgres',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'hogarpetfriendly',  # Nombre de la base de datos
+        'USER': 'root',               # Nombre de usuario
+        'PASSWORD': '12345',          # Contraseña
+        'HOST': '127.0.0.1',          # Hostname o dirección IP del servidor de la base de datos
+        'PORT': '3306',               # Puerto de la base de datos
     }
 }
 
