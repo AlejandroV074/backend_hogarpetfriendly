@@ -1,1 +1,1 @@
-gunicorn api_petfriendly.wsgi:application
+web: gunicorn api_petfriendly.wsgi:application
