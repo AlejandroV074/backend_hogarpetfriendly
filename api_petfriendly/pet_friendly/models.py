@@ -8,6 +8,7 @@ class Animal(models.Model):
     url_image = models.CharField(max_length=500)
     state = models.IntegerField()
     shelter = models.CharField(max_length=50)
+    gender = models.CharField(max_length=45)
     class Meta:
         # Nombre de la tabla personalizado
         db_table = 'animal'

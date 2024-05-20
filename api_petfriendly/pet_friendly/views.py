@@ -8,7 +8,7 @@ import json
 @csrf_exempt
 def obtener_lista_animales(request):
     animales = Animal.objects.all()
-    data = [{'animal_id': animal.animal_id, 'nombre': animal.name, 'especie': animal.species, 'edad': animal.age, 'url_image': animal.url_image} for animal in animales]
+    data = [{'animal_id': animal.animal_id, 'nombre': animal.name, 'especie': animal.species, 'gender': animal.gender, 'edad': animal.age, 'url_image': animal.url_image} for animal in animales]
     return JsonResponse(data, safe=False)
 
 @csrf_exempt
