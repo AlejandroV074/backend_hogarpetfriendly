@@ -84,15 +84,15 @@ WSGI_APPLICATION = 'api_petfriendly.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hogarpetfriendly',  # Nombre de la base de datos
-        'USER': 'root',               # Nombre de usuario
-        'PASSWORD': '12345',          # Contraseña
-        'HOST': '127.0.0.1',          # Hostname o dirección IP del servidor de la base de datos
-        'PORT': '3306',               # Puerto de la base de datos
+        'NAME': 'hogarpetfriendly',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
-DATABASES['default'] = dj_database_url.parse("postgres://mydb_c3zx_user:b3AtiKWrFZtB9aXLJbSWPDlUyZQekwUL@dpg-coi953tjm4es739k9ugg-a.oregon-postgres.render.com/mydb_c3zx")
+DATABASES['default'] = dj_database_url.parse("mysql://root:@localhost:3306/hogarpetfriendly")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
