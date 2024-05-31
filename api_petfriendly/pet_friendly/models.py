@@ -23,3 +23,14 @@ class Contact(models.Model):
     class Meta:
         # Nombre de la tabla personalizado
         db_table = 'contact'
+
+
+class ContactRegister(models.Model):
+    contacts_register_id = models.AutoField(primary_key=True)  # AutoField
+    name = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    cell_phone = models.CharField(max_length=20)
+    message = models.CharField(max_length=500)
+    class Meta:
+        # Nombre de la tabla personalizado
+        db_table = 'contact_register'        

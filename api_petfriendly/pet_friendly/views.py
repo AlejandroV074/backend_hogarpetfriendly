@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from .models import Animal, Contact
+from .models import Animal, Contact, ContactRegister
 from django.views.decorators.csrf import csrf_exempt
 import json
 
@@ -55,3 +55,21 @@ def agregar_contacto(request):
         return JsonResponse({'mensaje': 'Contacto agregado correctamente'}, status=201)
     else:
         return JsonResponse({'error': 'Método no permitido'}, status=405)
+    
+@csrf_exempt
+def agregar_registro(request):
+    if request.method == 'POST':
+        # Obtener los datos del cuerpo de la solicitud
+        data = json.loads(request.body)
+        nombre_contacto = data.get('name')
+        telefono = data.get('cell_phone')
+        email = data.get('email')
+        message = data.get('message')
+
+        # Crear el nuevo contacto
+        contacto = ContactRegister.objects.create(name=nombre_contacto, cell_phone=telefono, email=email, message=message)
+        
+        # Devolver una respuesta
+        return JsonResponse({'mensaje': 'Contacto de registro agregado correctamente'}, status=201)
+    else:
+        return JsonResponse({'error': 'Método no permitido'}, status=405)    
